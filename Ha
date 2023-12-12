@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Khai báo bi?n
+    int a, b, c;
+
+    // Nh?p vào ba s? nguyên
+    printf("Nhap vao ba so nguyen a, b, c: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    // Ki?m tra đi?u ki?n t?n t?i tam giác
+    if (a + b > c && a + c > b && b + c > a) {
+        // Tính chu vi tam giác
+        int chuVi = a + b + c;
+        printf("Chu vi tam giac la: %d\n", chuVi);
+
+        // Tính di?n tích tam giác theo công th?c Heron
+        float p = chuVi / 2.0; // N?a chu vi
+        float dienTich = sqrt(p * (p - a) * (p - b) * (p - c));
+        printf("Dien tich tam giac la: %.2f\n", dienTich);
+    } else {
+        // In thông báo n?u không t?n t?i tam giác
+        printf("Ba so khong the tao thanh tam giac.\n");
+    }
+
+    return 0;
+}
