@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> numbers;
+
+    // Nhập dãy số từ bàn phím
+    std::cout << "Enter numbers (enter a non-integer to stop): ";
+    int input;
+    while (std::cin >> input) {
+        numbers.push_back(input);
+    }
+
+    // Tìm số chẵn cuối cùng
+    int lastEven = -1; // Giả sử không có số chẵn
+    for (int i = numbers.size() - 1; i >= 0; --i) {
+        if (numbers[i] % 2 == 0) {
+            lastEven = numbers[i];
+            break;
+        }
+    }
+
+    // Hiển thị kết quả
+    if (lastEven != -1) {
+        std::cout << "Last even number: " << lastEven << std::endl;
+    } else {
+        std::cout << "No Even number" << std::endl;
+    }
+
+    return 0;
+}
